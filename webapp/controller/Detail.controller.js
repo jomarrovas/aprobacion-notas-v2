@@ -12,15 +12,7 @@ sap.ui.define([
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, 
-              JSONModel, 
-              Filter, 
-              FilterOperator, 
-              MessageBox, 
-              BusyIndicator, 
-              library, 
-              ValueState, 
-              servSol) {
+    function (Controller, JSONModel, Filter, FilterOperator, MessageBox, BusyIndicator, library, ValueState, servSol) {
         "use strict";
         let CController;
         let goThat;
@@ -41,6 +33,9 @@ sap.ui.define([
                 this.oRouter = this.getOwnerComponent().getRouter();
                 this.oRouter.getRoute("detail").attachPatternMatched(this.onBeforeRouteMatched, this);
                 this.getView().setModel(new JSONModel({}), "Head");
+
+                //this.init();
+                servSol.init(this.oServiceModel);
             },
 
             /**
@@ -59,7 +54,7 @@ sap.ui.define([
               onAfterRendering: function () {
                 var Controller = this;
                 this.localModel = this.getView().getModel("localModel");
-                this.localModel.setSizeLimit(1e3);
+                this.localModelSrv = this.getView().getModel("mainModel");
               },
 
               refreshMached: async function (e) {
@@ -114,7 +109,15 @@ sap.ui.define([
                     }
                 };
                 oRows.attachChange(fnAfterBinding);
-        oRows.filter(aFilters);
+                oRows.filter(aFilters);
+
+                // Validación de carga de flujo
+            
+                this.oServiceModel = this.getOwnerComponent().getModel("mainModel");
+                servSol.init(this.oServiceModel);
+
+                var d = await servSol.obtenerFlujo("LIB1");
+                this.localModel.setProperty("/flujoCollection", d);
             },
 
             /**

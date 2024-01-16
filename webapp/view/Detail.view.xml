@@ -215,78 +215,128 @@
                 </uxap:subSections>
               </uxap:ObjectPageSection>
 
+
               <uxap:ObjectPageSection titleUppercase="false"
                           title="{i18n>flujoAprobacion}">
                 <uxap:subSections>
                   <uxap:ObjectPageSubSection>
                     <uxap:blocks>
-                      <VBox justifyContent="Center">
-                        <Label  text="{i18n>clSociedad}"
-                            labelFor="idText7"/>
-                        <Text id="idText7"
-                            text="{Head>/Sociedad}"/>
-                        <html:br />
-                        <Label  text="{i18n>clDocumento}"
-                            labelFor="idText8"/>
-                        <Text id="idText8"
-                            text="{Head>/Documento}"/>
-                        <html:br />
-                      </VBox>
+                      <Table  id="Tableesquema_1"
+                          mode="None"
+                          inset="false"
+                          growingThreshold="10"
+                          width="auto"
+                          items="{oViewModel>/main}">
+                        <columns>
+                          <Column>
+                            <Text   text="{i18n>clDocumento}"/>
+                          </Column>
+                          <Column>
+                            <Text   text="{i18n>clSociedad}"/>
+                          </Column>
+                        </columns>
+                        <items>
+                          <ColumnListItem type="Inactive">
+                            <cells>
+                              <Text text="{oViewModel>userId}"/>
+                              <Input value="{oViewModel>firstName}"/>
+                            </cells>
+                          </ColumnListItem>
+                        </items>
+                      </Table>
+
                     </uxap:blocks>
                   </uxap:ObjectPageSubSection>
                 </uxap:subSections>
               </uxap:ObjectPageSection>
 
-<!--   
-              <uxap:ObjectPageSection title="{i18n>flujoAprobacion}" >
+
+              <uxap:ObjectPageSection titleUppercase="false"
+                          title="{i18n>flujoAprobacion}">
                 <uxap:subSections>
                   <uxap:ObjectPageSubSection>
-
                     <uxap:blocks>
-                      <m:Table id="Tableesquema"
-                          sticky="ColumnHeaders,HeaderToolbar"
+
+                      <Table  id="Tableesquema_2"
+                          mode="None"
                           inset="false"
-                          growing="true"
+                          growingThreshold="10"
+                          width="auto"
                           items="{
                             path: 'localModel>/flujoCollection',
                             sorter: {
                               path: 'paso'
                             }
                           }"
-                          class="sapFDynamicPageAlignContent"
-                          width="auto">
-                        <m:columns>
-                          <m:Column demandPopin="true">
-                            <m:Text text="{i18n>libCodigo}" />
-                          </m:Column>
-                          <m:Column demandPopin="true">
-                              <m:Text text="{i18n>paso}"/>
-                            </m:Column>
+                      >
+                        <columns>
+                          <Column>
+                            <Text   text="{i18n>libCodigo}"/>
+                          </Column>
+                          <Column>
+                            <Text   text="{i18n>usuario}"/>
+                          </Column>
+                        </columns>
+                        <items>
+                          <ColumnListItem type="Inactive">
+                            <cells>
+                              <ObjectIdentifier text="{localModel>lib_codigo}"/>
+                              <ObjectIdentifier text="{localModel>usuario}"/>
+                            </cells>
+                          </ColumnListItem>
+                        </items>
+                      </Table>
 
-                          <m:Column demandPopin="true">
-                            <m:Text text="{i18n>usuario}" />
-                          </m:Column>
-                        </m:columns>
-                        <m:items>
-
-                          <m:ColumnListItem vAlign="Middle">
-                            <m:cells>
-                              <m:ObjectIdentifier text="{localModel>lib_codigo}" />
-                              <m:HBox >
-                                <core:Icon src="sap-icon://arrow-right" visible="{= ${localModel>paso} === ${localModel>/detalle/Paso}}" class="sapUiSmallMarginEnd" ></core:Icon>
-                                <m:Label text="{localModel>paso}" />
-                              </m:HBox>
-                              <m:ObjectIdentifier text="{localModel>usuario}" />
-                            </m:cells>
-                          </m:ColumnListItem>
-
-                        </m:items>
-                      </m:Table>
                     </uxap:blocks>
                   </uxap:ObjectPageSubSection>
                 </uxap:subSections>
               </uxap:ObjectPageSection>
--->
+
+  
+              <uxap:ObjectPageSection title="{i18n>flujoAprobacion}" >
+                <uxap:subSections>
+                  <uxap:ObjectPageSubSection>
+
+                    <uxap:blocks>
+                      <Table id="Tableesquema_3"
+                          mode="None"
+                          inset="false"
+                          growingThreshold="10"
+                          width="auto"
+                          items="{/ZCDS_ESQUEMA_USR}"
+                      >
+                        <columns>
+                          <Column demandPopin="true">
+                            <Text text="{i18n>libCodigo}" />
+                          </Column>
+                          <Column demandPopin="true">
+                              <Text text="{i18n>paso}"/>
+                            </Column>
+
+                          <Column demandPopin="true">
+                            <Text text="{i18n>usuario}" />
+                          </Column>
+                        </columns>
+
+                        <items>
+                          <ColumnListItem type="Inactive">
+                            <cells>
+                              <Text text="{lib_codigo}" />
+                              <HBox >
+                                <core:Icon src="sap-icon://arrow-right" class="sapUiSmallMarginEnd" ></core:Icon>
+                                <Text text="{paso}" />
+                              </HBox>
+                              <Text text="{usuario}" />
+                            </cells>
+                          </ColumnListItem>
+                        </items>
+
+                      </Table>
+                    </uxap:blocks>
+                  </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+              </uxap:ObjectPageSection>
+
 
             </uxap:sections>
 

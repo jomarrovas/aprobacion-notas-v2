@@ -22,7 +22,14 @@
               "settings": {
                   "localUri": "localService/metadata.xml"
               }
-          }
+          },
+          "mainModel": {
+            "uri": "/sap/opu/odata/sap/ZSO_FI_NOTA_CREDITO_APROBAR_SRV/",
+            "type": "OData",
+            "settings": {
+                "localUri": "localService/metadata.xml"
+            }
+         }
       }
   },
   "sap.ui": {
@@ -68,6 +75,16 @@
                   "bundleName": "zalcsa.aprobacionnotasv2.i18n.i18n"
               }
           },
+          "mainModel": {
+            "dataSource": "mainModel",
+            "type": "sap.ui.model.odata.v2.ODataModel",
+            "settings": {
+              "defaultOperationMode": "Server",
+              "defaultBindingMode": "OneWay",
+              "defaultCountMode": "Request"
+            },
+            "preload": true
+        },
           "localModel": {
             "type": "sap.ui.model.json.JSONModel",
             "uri": "model/localModel.json"
@@ -82,7 +99,7 @@
                   "metadataUrlParams": {
                       "sap-language": "ES"
                   }
-              },
+              },              
               "dataSource": "ZSO_FI_NOTA_CREDITO_APROBAR_SRV",
               "preload": true
           }
@@ -151,7 +168,7 @@
           "viewName": "zalcsa.aprobacionnotasv2.view.Main",
           "type": "XML",
           "async": true,
-          "id": "shell"
+          "id": "Main"
       }
   },
   "sap.cloud": {
