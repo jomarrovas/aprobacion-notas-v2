@@ -1,0 +1,315 @@
+<mvc:View   xmlns="sap.m"
+            xmlns:core="sap.ui.core"
+            xmlns:table="sap.ui.table"
+            xmlns:mvc="sap.ui.core.mvc"
+            xmlns:form="sap.ui.layout.form"
+            xmlns:layout="sap.ui.layout"
+            xmlns:uxap="sap.uxap"
+            xmlns:html="http://www.w3.org/1999/xhtml"
+            controllerName="zalcsa.aprobacionnotasv2.controller.Detail">
+    <App>
+    <pages>
+      <Page title="{i18n>lblDetalleCobranza}">
+        <content>
+          <MessagePage    id="idPage"
+                  showHeader="false"
+                  description="{i18n>msPage}"
+                  visible="true">
+          </MessagePage>
+          <uxap:ObjectPageLayout  id="idPageLayout"
+                      class="sapUiSmallMarginEnd"
+                      flexEnabled="true"
+                      isChildPage="true"
+                      showFooter="true"
+                      visible="false">
+            <uxap:headerTitle>
+              <uxap:ObjectPageDynamicHeaderTitle>
+                <uxap:expandedHeading>
+                  <Title  text="{Head>/Documento}" />
+                </uxap:expandedHeading>
+                <uxap:snappedHeading>
+                  <Title  text="{Head>/Documento}" />
+                </uxap:snappedHeading>
+                <uxap:navigationActions>
+                  <OverflowToolbarButton  icon="sap-icon://full-screen"
+                              press=".handleFullScreen"
+                              visible="{=${localModel>/visibleToolbarFullScreen} ? true : false}"
+                              tooltip="{i18n>tltEnterFullScreenMode}"/>
+                            <OverflowToolbarButton  icon="sap-icon://exit-full-screen"
+                              press=".handleExitFullScreen"
+                              visible="{=${localModel>/visibleToolbarFullScreen} ? false : true}"
+                              tooltip="{i18n>tltExitFullScreenMode}"/>
+                  <OverflowToolbarButton  icon="sap-icon://decline"
+                              press=".handleClose"
+                              tooltip="{i18n>btnClose}"/>
+                </uxap:navigationActions>
+              </uxap:ObjectPageDynamicHeaderTitle>
+            </uxap:headerTitle>
+            <uxap:headerContent>
+              <FlexBox  wrap="Wrap">
+                <VBox justifyContent="Center"
+                    class="sapUiSmallMarginBeginEnd">
+                  <Label  text="{i18n>clSociedad}"
+                      labelFor="idText1"/>
+                  <Text id="idText1"
+                      text="{Head>/Sociedad}"/>
+                </VBox>
+                <VBox justifyContent="Center"
+                    class="sapUiSmallMarginBeginEnd">
+                  <Label  text="{i18n>clDocumento}"
+                      labelFor="idText2"/>
+                  <Text id="idText2"
+                      text="{Head>/Documento}"/>
+                </VBox>
+                <VBox justifyContent="Center"
+                    class="sapUiSmallMarginBeginEnd">
+                  <Label  text="{i18n>clCodCliente}"
+                      labelFor="idText4"/>
+                  <Text id="idText4"
+                      text="{Head>/CodigoCliente}"/>
+                </VBox>
+                <VBox justifyContent="Center"
+                    class="sapUiSmallMarginBeginEnd">
+                  <Label  text="{i18n>clCreadoPor}"
+                      labelFor="idText3"/>
+                  <Text id="idText3"
+                      text="{Head>/CreadoPor}"/>
+                </VBox>
+              </FlexBox>
+            </uxap:headerContent>
+
+            <uxap:sections>
+
+              <uxap:ObjectPageSection titleUppercase="false"
+                          title="{i18n>objSection1}">
+                <uxap:subSections>
+                  <uxap:ObjectPageSubSection>
+                    <uxap:blocks>
+                      <VBox justifyContent="Center">
+                        <Label  text="{i18n>clSociedad}"
+                            labelFor="idText5"/>
+                        <Text id="idText5"
+                            text="{Head>/Sociedad}"/>
+                        <html:br />
+                        <Label  text="{i18n>clDocumento}"
+                            labelFor="idText6"/>
+                        <Text id="idText6"
+                            text="{Head>/Documento}"/>
+                        <html:br />
+                      </VBox>
+                      <!--
+                      <VBox justifyContent="Center" >
+                        <Label  text="{i18n>clCpagoActual}"
+                            labelFor="idText7"/>
+                        <Text id="idText7"
+                            text="{Head>/CreadoPor}"/>
+                        <html:br />
+                        <Label  text="{i18n>clCpagoNuevo}"
+                            labelFor="idInput1"/>
+                        <Input  id="idInput1"
+                            required="true"
+                            showSuggestion="true"
+                            showValueHelp="true"
+                            valueHelpRequest=".onValueHelpRequest"
+                            suggestionItems="{/CondicionPagoSet}"
+                            change=".onChange"
+                            maxLength="4"
+                            value="{Head>/CpagoNuevo}">
+                          <suggestionItems>
+                            <core:Item  text="{zterm}" />
+                          </suggestionItems>
+                        </Input>
+                        <html:br />
+                      </VBox>
+                      -->
+                    </uxap:blocks>
+                  </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+              </uxap:ObjectPageSection>
+
+              <uxap:ObjectPageSection titleUppercase="false"
+                          title="{i18n>objSection2}">
+                <uxap:subSections>
+                  <uxap:ObjectPageSubSection>
+                    <uxap:blocks>
+                      <Table  id="idTable2"
+                          mode="None"
+                          inset="false"
+                          growingThreshold="10"
+                          width="auto"
+                          items="{/selnotadetalleSet}">
+                        <headerToolbar>
+                          <OverflowToolbar>
+                            <content>
+                              <Title id="idTitle2" text="{i18n>lblDetalleCobranza} (0)" level="H2"/>
+                              <ToolbarSpacer />
+                            </content>
+                          </OverflowToolbar>
+                        </headerToolbar>
+                        <columns>
+                          <Column>
+                            <Text   text="{i18n>clDocumento}"/>
+                          </Column>
+                          <Column>
+                            <Text   text="{i18n>clSociedad}"/>
+                          </Column>
+                          <Column minScreenWidth="Tablet"
+                              demandPopin="true">
+                            <Text   text="{i18n>clCodCliente}"/>
+                          </Column>
+                          <Column minScreenWidth="Tablet"
+                              demandPopin="true">
+                            <Text   text="{i18n>clValorNeto}"/>
+                          </Column>
+                          <Column minScreenWidth="Tablet"
+                              demandPopin="true">
+                            <Text text="{i18n>CreadoPor}"/>
+                          </Column>
+                        </columns>
+                        <items>
+                          <ColumnListItem type="Inactive">
+                            <cells>
+                              <Text text="{Documento}"/>
+                              <Text text="{Sociedad}"/>
+                              <Text text="{CodigoCliente}"/>
+                              <Text   text="{path:'ValorNeto',
+                                    type:'sap.ui.model.type.Float',
+                                    formatOptions:{
+                                      groupingSeparator: ',',
+                                      decimalSeparator : '.',
+                                      decimals: 2
+                              }}"/>
+                              <Text text="{CreadoPor}"/>
+                            <!--
+                              <Text text="{path:'Cantidad',
+                                    type:'sap.ui.model.type.Float',
+                                    formatOptions:{
+                                      groupingSeparator: ',',
+                                      decimalSeparator : '.',
+                                      decimals: 3
+                                    }}" />
+                              <Text text="{Descripcion}"/>
+                              <Text   text="{Um}"/>
+                              <Text   text="{path:'Precio',
+                                    type:'sap.ui.model.type.Float',
+                                    formatOptions:{
+                                      groupingSeparator: ',',
+                                      decimalSeparator : '.',
+                                      decimals: 2
+                                    }}"/>
+                              <Text   text="{path:'Total',
+                                    type:'sap.ui.model.type.Float',
+                                    formatOptions:{
+                                      groupingSeparator: ',',
+                                      decimalSeparator : '.',
+                                      decimals: 2
+                                    }}"/>
+                            -->
+                            </cells>
+                          </ColumnListItem>
+                        </items>
+                      </Table>
+
+                    </uxap:blocks>
+                  </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+              </uxap:ObjectPageSection>
+
+              <uxap:ObjectPageSection titleUppercase="false"
+                          title="{i18n>flujoAprobacion}">
+                <uxap:subSections>
+                  <uxap:ObjectPageSubSection>
+                    <uxap:blocks>
+                      <VBox justifyContent="Center">
+                        <Label  text="{i18n>clSociedad}"
+                            labelFor="idText7"/>
+                        <Text id="idText7"
+                            text="{Head>/Sociedad}"/>
+                        <html:br />
+                        <Label  text="{i18n>clDocumento}"
+                            labelFor="idText8"/>
+                        <Text id="idText8"
+                            text="{Head>/Documento}"/>
+                        <html:br />
+                      </VBox>
+                    </uxap:blocks>
+                  </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+              </uxap:ObjectPageSection>
+
+<!--   
+              <uxap:ObjectPageSection title="{i18n>flujoAprobacion}" >
+                <uxap:subSections>
+                  <uxap:ObjectPageSubSection>
+
+                    <uxap:blocks>
+                      <m:Table id="Tableesquema"
+                          sticky="ColumnHeaders,HeaderToolbar"
+                          inset="false"
+                          growing="true"
+                          items="{
+                            path: 'localModel>/flujoCollection',
+                            sorter: {
+                              path: 'paso'
+                            }
+                          }"
+                          class="sapFDynamicPageAlignContent"
+                          width="auto">
+                        <m:columns>
+                          <m:Column demandPopin="true">
+                            <m:Text text="{i18n>libCodigo}" />
+                          </m:Column>
+                          <m:Column demandPopin="true">
+                              <m:Text text="{i18n>paso}"/>
+                            </m:Column>
+
+                          <m:Column demandPopin="true">
+                            <m:Text text="{i18n>usuario}" />
+                          </m:Column>
+                        </m:columns>
+                        <m:items>
+
+                          <m:ColumnListItem vAlign="Middle">
+                            <m:cells>
+                              <m:ObjectIdentifier text="{localModel>lib_codigo}" />
+                              <m:HBox >
+                                <core:Icon src="sap-icon://arrow-right" visible="{= ${localModel>paso} === ${localModel>/detalle/Paso}}" class="sapUiSmallMarginEnd" ></core:Icon>
+                                <m:Label text="{localModel>paso}" />
+                              </m:HBox>
+                              <m:ObjectIdentifier text="{localModel>usuario}" />
+                            </m:cells>
+                          </m:ColumnListItem>
+
+                        </m:items>
+                      </m:Table>
+                    </uxap:blocks>
+                  </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+              </uxap:ObjectPageSection>
+-->
+
+            </uxap:sections>
+
+            <uxap:footer>
+              <OverflowToolbar>
+                <Button id="idButton1"
+                    icon="sap-icon://message-popup"
+                    type="Emphasized"
+                    text="1"
+                    visible="false"
+                    press=".handleMessagePopoverPress"/>
+                <ToolbarSpacer/>
+                <Button type="Accept"
+                    text="{i18n>btnApprove}"
+                    press=".onAccept"/>
+                <Button type="Reject"
+                    text="{i18n>btnReject}"
+                    press=".onReject"/>
+              </OverflowToolbar>
+            </uxap:footer>
+          </uxap:ObjectPageLayout>
+        </content>
+      </Page>
+    </pages>
+  </App>
+</mvc:View>

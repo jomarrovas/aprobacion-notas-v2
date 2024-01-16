@@ -1,0 +1,15 @@
+<core:FragmentDefinition    xmlns="sap.m"
+                            xmlns:core="sap.ui.core"
+                            xmlns:mvc="sap.ui.core.mvc"
+                            xmlns:layout="sap.ui.layout"
+                            xmlns:form="sap.ui.layout.form">
+    <SelectDialog   id="selectDialog"
+                    title="{i18n>clCpagoNuevo}"
+                    items="{/CondicionPagoSet}"
+                    search=".onValueHelpSearch"
+                    confirm=".onValueHelpClose"
+                    cancel=".onValueHelpClose">
+        <StandardListItem   title="{zterm}"
+                      description="{ztext}"/>
+    </SelectDialog>
+</core:FragmentDefinition>

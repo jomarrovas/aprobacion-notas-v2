@@ -1,0 +1,605 @@
+{
+    "visibleToolbarFullScreen": true,
+    "oFilters": {},
+
+    "variables": {
+        "detalleDocLength": 0
+      },
+      "detalle": {},
+      "detalle2": {},
+      "detalle3": {},
+      "cuadroDireccion": {},
+      "sZonaVentas": null,
+      "sOficinaVenta": null,
+      "sGrupoVendedores": null,
+      "sAsesores": null,
+      "sRutas": null,
+      "sFormasJuridicas": null,
+      "sGrupoClientes": null,
+      "sClaseClientes": null,
+      "sTipoDireccion": null,
+      "sTipoPagos": null,
+      "sPais": null,
+      "sRegiones": null,
+      "sMunicipios": null,
+      "ProductCollection": [
+              {
+                "ProductId": "HT-1000",
+                "Name": "Notebook Basic 15"
+              },
+              {
+                "ProductId": "HT-1001",
+                "Name": "Notebook Basic 17"
+              },
+              {
+                "ProductId": "HT-1002",
+                "Name": "Notebook Basic 18"
+              },
+              {
+                "ProductId": "HT-1003",
+                "Name": "Notebook Basic 19"
+              },
+              {
+                "ProductId": "HT-1007",
+                "Name": "ITelO Vault"
+              }
+            ],
+      "direccionCollection": [],
+    
+      "listaSolicitudesX": [
+        {
+          "numero": 1,
+          "codigo": "",
+          "solicitud": "Cliente Nuevo",
+          "nombre": "Tienda la Surtidora",
+          "solicitante": "Wilder Espinoza",
+          "datosGenerales": [
+            {
+              "zonaVentas": [
+                  {
+                    "0": "Centro"
+                  }
+                ]
+            }
+          ]
+        },
+        {
+        "numero": 2,
+        "codigo": "1020345",
+        "solicitud": "Modificacion de datos",
+        "nombre": "Tienda la Surtidora",
+        "solicitante": "Wilder Espinoza"
+        },
+        {
+        "numero": 2,
+        "codigo": "1020345",
+        "solicitud": "Nueva direccion",
+        "nombre": "Tienda la Surtidora",
+        "solicitante": "Wilder Espinoza"
+        }
+    
+      ],
+    
+      "listadoDocumentos": [
+        {
+        "referencia": "01-00005-00406691",
+        "fechaDocumento": "29/10/2020",
+        "importeFactura": 12331,
+        "monedaDoc": "PEN",
+        "estado":"Por Aprobar",
+        "ImporteML": 12331,
+        "porcentDetraccion": 10,
+        "importeDetraccion": 433,
+        "monedaDetraccion": "PEN",
+        "fechaDetraccion": "29/10/2020",
+          "cuadro_comparativo": [
+              {
+          "Solped":"01-00005-00406691",
+          "status":"Success",
+          "peticion": "10000-01",
+          "proveedor": "Compu Center",
+          "material_servicio":"c-001",
+          "descripcion":"Monitor",
+          "precio_inicial":"450.00",
+          "precio_final":"",
+          "tiempo_entrega":"",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"2",
+          "precio":"200.00",
+          "estado": true
+        },
+            {
+          "Solped":"01-00005-00406691",
+          "status":"Success",
+          "peticion": "10000-01",
+          "proveedor": "%",
+          "material_servicio":"c-001",
+          "descripcion":"Monitor",
+          "precio_inicial":"420.00",
+          "precio_final":"",
+          "tiempo_entrega":"",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"2",
+          "precio":"200.00",
+          "estado": false
+        },
+        {
+          "Solped":"01-00005-00406691",
+          "status":"Success",
+          "peticion": "10000-01",
+          "proveedor": "HP Center",
+          "material_servicio":"c-001",
+          "descripcion":"Monitor",
+          "precio_inicial":"420.00",
+          "precio_final":"",
+          "tiempo_entrega":"",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"2",
+          "precio":"200.00",
+          "estado": true
+        },{
+          "Solped":"01-00005-00406691",
+          "status":"Success",
+          "peticion": "10000-01",
+          "proveedor": "%",
+          "material_servicio":"c-001",
+          "descripcion":"Monitor",
+          "precio_inicial":"444.00",
+          "precio_final":"444.00",
+          "tiempo_entrega":"",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"2",
+          "precio":"200.00",
+          "estado": false
+        }],
+          "peticion_oferta": [{
+          "Solped":"01-00005-00406691",
+          "status":"Success",
+          "peticion": "10000-01",
+          "proveedor": "Compu Center",
+          "material_servicio":"c-001",
+          "descripcion":"Monitor",
+          "precio_inicial":"444.00",
+          "precio_final":"444.00",
+          "tiempo_entrega":"",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"2",
+          "precio":"200.00",
+          "estado": false
+        },{
+          "peticion": "10000-02",
+          "proveedor": "Hp Center",
+          "status":"None",
+          "Solped":"01-00005-00406691",
+          "material_servicio":"c-002",
+          "descripcion":"Teclado",
+          "precio_inicial":"444.00",
+          "precio_final":"444.00",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"1",
+          "precio":"33.00",
+          "estado": false
+        }],
+      "datos": [{
+          "valor": "Proveedor A",
+          "servicio": "dato1",
+          "area":"Area1",
+          "material_servicio":"c-001",
+          "descripcion":"Monitor",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"4",
+          "precio":"1.00",
+          "estado": false
+        },{
+          "valor": "Proveedor B",
+          "servicio": "dato2",
+          "area":"Area2",
+          "material_servicio":"c-002",
+          "descripcion":"Teclado",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"3",
+          "precio":"3.50",
+          "estado": false
+        }]
+    
+    
+      },{
+    
+        "referencia": "01-00005-00406691",
+        "fechaDocumento": "29/09/2020",
+        "importeFactura": 12331,
+        "monedaDoc": "PEN",
+        "ImporteML": 12331,
+        "estado":"Por Aprobar",
+        "porcentDetraccion": 10,
+        "importeDetraccion": 1500,
+        "monedaDetraccion": "PEN",
+        "fechaDetraccion": "29/10/2020",
+          "cuadro_comparativo": [{
+          "Solped":"01-00005-00406691",
+          "status":"Success",
+          "peticion": "01-00005-00406691",
+          "proveedor": "Dimerc",
+          "material_servicio":"c-001",
+          "descripcion":"Monitor",
+          "precio_inicial":"1500.00",
+          "precio_final":"",
+          "tiempo_entrega":"",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"2",
+          "precio":"200.00",
+          "estado": true
+        },
+          {
+          "Solped":"01-00005-00406691",
+          "status":"Success",
+          "peticion": "01-00005-00406691",
+          "proveedor": "%",
+          "material_servicio":"c-001",
+          "descripcion":"Monitor",
+          "precio_inicial":"420.00",
+          "precio_final":"",
+          "tiempo_entrega":"",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"2",
+          "precio":"200.00",
+          "estado": false
+        },{
+          "peticion": "10000-02",
+          "proveedor": "Tay Loy",
+          "status":"None",
+          "Solped":"01-00005-00406691",
+          "material_servicio":"c-002",
+          "descripcion":"Teclado",
+          "precio_inicial":"1400.00",
+          "precio_final":"",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"1",
+          "precio":"33.00",
+          "estado": true
+        },
+          {
+          "Solped":"01-00005-00406691",
+          "status":"Success",
+          "peticion": "01-00005-00406691",
+          "proveedor": "%",
+          "material_servicio":"c-001",
+          "descripcion":"Monitor",
+          "precio_inicial":"420.00",
+          "precio_final":"",
+          "tiempo_entrega":"",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"2",
+          "precio":"200.00",
+          "estado": false
+        },
+        {
+          "peticion": "10000-02",
+          "proveedor": "Faber Castell",
+          "status":"None",
+          "Solped":"01-00005-00406691",
+          "material_servicio":"c-002",
+          "descripcion":"Teclado",
+          "precio_inicial":"1350.00",
+          "precio_final":"",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"1",
+          "precio":"33.00",
+          "estado": true
+        },
+          {
+          "Solped":"01-00005-00406691",
+          "status":"Success",
+          "peticion": "01-00005-00406691",
+          "proveedor": "%",
+          "material_servicio":"c-001",
+          "descripcion":"Monitor",
+          "precio_inicial":"420.00",
+          "precio_final":"",
+          "tiempo_entrega":"",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"2",
+          "precio":"200.00",
+          "estado": false
+        }],
+          "peticion_oferta": [{
+          "peticion": "1000-03",
+          "proveedor": "Dimerc",
+          "status":"Success",
+          "Solped":"01-00005-00406691",
+          "precio_inicial":"1000.00",
+          "precio_final":"",
+          "material_servicio":"c-00001",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"4",
+          "precio":"1.00",
+          "estado": false
+        },{
+          "peticion": "1000-04",
+          "proveedor": "Tay Loy",
+          "status":"None",
+          "Solped":"01-00005-00406691",
+          "precio_inicial":"990.00",
+          "precio_final":"",
+          "material_servicio":"c-00002",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"3",
+          "precio":"3.50",
+          "estado": false
+        },
+        {
+          "peticion": "1000-05",
+          "proveedor": "Faber Castel",
+          "status":"Success",
+          "Solped":"01-00005-00406691",
+          "precio_inicial":"990.00",
+          "precio_final":"",
+          "material_servicio":"c-00002",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"3",
+          "precio":"3.50",
+          "estado": false
+        }],
+    
+      "datos": [{
+          "valor": "Proveedor B",
+          "servicio": "dato2",
+          "material_servicio":"c-003",
+          "descripcion":"Lapicero",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"1000",
+          "precio":"1.50",
+          "estado": false
+        }]
+    
+      },
+      {
+    
+        "referencia": "01-00005-00406692",
+        "fechaDocumento": "29/08/2020",
+        "importeFactura": 12331,
+        "monedaDoc": "PEN",
+        "ImporteML": 12331,
+        "estado":"Por Aprobar",
+        "porcentDetraccion": 10,
+        "importeDetraccion": 633,
+        "monedaDetraccion": "PEN",
+        "fechaDetraccion": "01/11/2020",
+          "peticion_oferta": [{
+          "peticion": "Proveedor A",
+          "proveedor": "1029201",
+          "material_servicio":"c-00001",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"4",
+          "precio":"1.00",
+          "estado": false
+        },{
+          "peticion": "Proveedor B",
+          "proveedor": "1029201",
+          "material_servicio":"c-00002",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"3",
+          "precio":"3.50",
+          "estado": false
+        }],
+      "datos": [{
+          "valor": "Proveedor A",
+          "servicio": "dato1",
+          "material_servicio":"c-00001",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"4",
+          "precio":"1.00",
+          "estado": false
+        },{
+          "valor": "Proveedor B",
+          "servicio": "dato2",
+          "material_servicio":"c-00002",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"3",
+          "precio":"3.50",
+          "estado": false
+        }]
+    
+      },
+      {
+        "referencia": "01-00005-00406692",
+        "fechaDocumento": "29/01/2020",
+        "importeFactura": 12331,
+        "monedaDoc": "PEN",
+        "estado":"Por Aprobar",
+        "ImporteML": 12331,
+        "porcentDetraccion": 10,
+        "importeDetraccion": 800,
+        "monedaDetraccion": "PEN",
+        "fechaDetraccion": "29/01/2020",
+          "peticion_oferta": [{
+          "peticion": "Proveedor A",
+          "proveedor": "1029201",
+          "material_servicio":"c-00001",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"4",
+          "precio":"1.00",
+          "estado": false
+        },{
+          "peticion": "Proveedor B",
+          "proveedor": "1029201",
+          "material_servicio":"c-00002",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"3",
+          "precio":"3.50",
+          "estado": false
+        }],
+      "datos": [{
+          "valor": "Proveedor A",
+          "servicio": "dato1",
+          "material_servicio":"c-00001",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"4",
+          "precio":"1.00",
+          "estado": false
+        },{
+          "valor": "Proveedor B",
+          "servicio": "dato2",
+          "material_servicio":"c-00002",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"3",
+          "precio":"3.50",
+          "estado": false
+        }]
+      }, {
+        "referencia": "01-00005-00406694",
+        "fechaDocumento": "29/01/2016",
+        "importeFactura": 12331,
+        "monedaDoc": "PEN",
+        "ImporteML": 12331,
+        "estado":"Por Aprobar",
+        "porcentDetraccion": 10,
+        "importeDetraccion": 1050,
+        "monedaDetraccion": "PEN",
+        "fechaDetraccion": "29/01/2016",
+      "datos": [{
+          "valor": "Proveedor A",
+          "servicio": "dato1",
+          "material_servicio":"c-00001",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"4",
+          "precio":"1.00",
+          "estado": false
+        },{
+          "valor": "Proveedor B",
+          "servicio": "dato2",
+          "material_servicio":"c-00002",
+          "fecha_entrega":"10/12/20",
+          "fecha_plazo":"10/11/20",
+          "cantidad":"3",
+          "precio":"3.50",
+          "estado": false
+        }]
+      }, {
+        "referencia": "01-00005-00406695",
+        "fechaDocumento": "29/01/2016",
+        "importeFactura": 12331,
+        "monedaDoc": "PEN",
+        "ImporteML": 12331,
+        "estado":"Por Aprobar",
+        "porcentDetraccion": 10,
+        "importeDetraccion": 1233,
+        "monedaDetraccion": "PEN",
+        "fechaDetraccion": "29/01/2016",
+      "datos": [{
+          "valor": "Proveedor A",
+          "servicio": "dato1",
+          "estado": false
+        },{
+          "valor": "Proveedor B",
+          "servicio": "dato2",
+          "estado": false
+        },{
+          "valor": "Proveedor c",
+          "servicio": "dato3",
+          "estado": false
+        },{
+          "valor": "Proveedor D",
+          "servicio": "dato4",
+          "estado": false
+    
+        }]
+      }, {
+        "referencia": "01-00005-00406696",
+        "fechaDocumento": "29/01/2016",
+        "importeFactura": 12331,
+        "monedaDoc": "PEN",
+        "estado":"Por Aprobar",
+        "ImporteML": 12331,
+        "porcentDetraccion": 10,
+        "importeDetraccion": 1233,
+        "monedaDetraccion": "PEN",
+        "fechaDetraccion": "29/01/2016",
+      "datos": [{
+          "valor": "Proveedor A",
+          "servicio": "dato1",
+          "estado": false
+        },{
+          "valor": "Proveedor B",
+          "servicio": "dato2",
+          "estado": false
+        },{
+          "valor": "Proveedor c",
+          "servicio": "dato3",
+          "estado": false
+        },{
+          "valor": "Proveedor D",
+          "servicio": "dato4",
+          "estado": false
+    
+        }]
+      }, {
+        "referencia": "01-00005-00406698",
+        "fechaDocumento": "29/01/2016",
+        "importeFactura": 12331,
+        "monedaDoc": "PEN",
+        "estado":"Por Aprobar",
+        "ImporteML": 12331,
+        "porcentDetraccion": 10,
+        "importeDetraccion": 1233,
+        "monedaDetraccion": "PEN",
+        "fechaDetraccion": "29/01/2016"
+      }, {
+        "referencia": "01-00005-00406699",
+        "fechaDocumento": "29/01/2016",
+        "importeFactura": 12331,
+        "monedaDoc": "PEN",
+        "ImporteML": 12331,
+        "porcentDetraccion": 10,
+        "importeDetraccion": 1233,
+        "monedaDetraccion": "PEN",
+        "fechaDetraccion": "29/01/2016"
+      }, {
+        "referencia": "01-00005-00406700",
+        "fechaDocumento": "29/01/2016",
+        "importeFactura": 12331,
+        "monedaDoc": "PEN",
+        "ImporteML": 12331,
+        "porcentDetraccion": 10,
+        "importeDetraccion": 1233,
+        "monedaDetraccion": "PEN",
+        "fechaDetraccion": "29/01/2016"
+      }],
+      "newCampo": "",
+      "mostrar_datos": {},
+      "select": [{
+        "key": "USD",
+        "UM": "USD"
+      },{
+        "key": "PEN",
+        "UM": "PEN"
+      }],
+      "newRet": ""
+}

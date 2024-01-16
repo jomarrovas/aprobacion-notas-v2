@@ -1,0 +1,96 @@
+<mvc:View   displayBlock="true"
+      xmlns="sap.m"
+      xmlns:f="sap.f"
+      xmlns:core="sap.ui.core"
+      xmlns:mvc="sap.ui.core.mvc"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      controllerName="zalcsa.aprobacionnotasv2.controller.Master">
+  <App>
+    <pages>
+      <f:DynamicPage  id="idDynamicPage">
+        <f:header>
+          <f:DynamicPageHeader  pinnable="true">
+            <f:content>
+              <!--<OverflowToolbar  width="100%"
+                        design="Solid"
+                        style="Clear">
+                <Title  id="idTitle1"
+                    text="{i18n>lblSeleccionCobranza} (0)"/>
+              </OverflowToolbar>-->
+              <VBox>
+                <Label  text="{i18n>phSociedad}"
+                    labelFor="input-a"/>
+                <Input  id="input-a"
+                    value="{localModel>/oFilters/Sociedad}"
+                    required="true"
+                    showSuggestion="true"
+                    showValueHelp="true"
+                    valueHelpOnly="true"
+                    valueHelpRequest=".onHelpBukrs"
+                    suggestionItems="{/I_CompanyCode}"
+                    maxLength="4">
+                  <suggestionItems>
+                    <core:Item  text="{CompanyCode}"/>
+                  </suggestionItems>
+                </Input>
+                <Label  text="{i18n>phCodigoCliente}"
+                    labelFor="input-b"/>
+                <Input  id="input-b"
+                    value="{localModel>/oFilters/CodCliente}"
+                    required="true"
+                    showSuggestion="true"
+                    showValueHelp="true"
+                    valueHelpOnly="true"
+                    valueHelpRequest=".onHelpKunnr"
+                    suggestionItems="{/I_Customer}"
+                    maxLength="10">
+                  <suggestionItems>
+                    <core:Item  text="{Customer}"/>
+                  </suggestionItems>
+                </Input>
+                <Label  text="{i18n>btBusqueda}"
+                    labelFor="searchField1"/>
+                <SearchField  id="searchField1"
+                        change="onSearchButton"
+                        search="onSearchButton"
+                        value="{localModel>/oFilters/filTabla}"
+                        placeholder="{i18n>homeSearchPlaceholder}"
+                        width="100%"/>
+                <Button width="100%" press="onSearchButton"
+                    text="{i18n>btBuscar}"/>
+              </VBox>
+            </f:content>
+          </f:DynamicPageHeader>
+        </f:header>
+
+        <f:content>
+          <VBox>
+            <List   id="idTable1"
+                busyIndicatorDelay="0"
+                headerText="{i18n>lblSeleccionCobranza} (0)"
+                noDataText="{i18n>tableNoData}"
+                growing="true"
+                growingThreshold="10"
+                inset="false"
+                width="auto"
+                items="{/selnotaSet}" >
+              <items>
+                <ObjectListItem type="Navigation"
+                        title="{Documento}"
+                        press=".onListItemPress"
+                        iconDensityAware="false">
+                  <attributes>
+                    <ObjectAttribute  text="{i18n>clCodCliente}: {CodigoCliente}"/>
+                    <ObjectAttribute  text="{i18n>clCreadoPor}: {CreadoPor}"/>
+                    <ObjectAttribute  text="{i18n>clMotivo}: {Motivo}"/>
+                  </attributes>
+                </ObjectListItem>
+              </items>
+            </List>
+          </VBox>
+        </f:content>
+
+      </f:DynamicPage>
+    </pages>
+  </App>
+</mvc:View>
