@@ -23,7 +23,10 @@ sap.ui.define([], function () {
             getCentroDistribucion: "/CentroDistribucionSet",
             getZonaTransporte: "/ZonaTransporteSet",
             getCliente: "/ClienteSet",
-            getFlujo: "/ZCDS_ESQUEMA_USR"
+            getFlujo: "/ZCDS_ESQUEMA_USR",
+
+            getPasoFi: "/ZFI_CDS_SOL_PASO",
+            getFlujoFi: "/ZFI_CDS_ESQUEMA_USR"
         }
     }
 });

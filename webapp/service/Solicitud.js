@@ -85,15 +85,27 @@ function (e) {
             const r = await this.oServiceModel.readAsync(e.services.getPerfilCampo, t);
             return r
         },
+
+        obtenerPaso: async function (n) {
+            const t = {
+                urlParameters: {
+                    $filter: "documento eq '" + n + "'"
+                }
+            };
+            const r = await this.oServiceModel.readAsync(e.services.getPasoFi, t);
+            return r
+        },
+
         obtenerFlujo: async function (n) {
             const t = {
                 urlParameters: {
                     $filter: "lib_codigo eq '" + n + "'"
                 }
             };
-            const r = await this.oServiceModel.readAsync(e.services.getFlujo, t);
+            const r = await this.oServiceModel.readAsync(e.services.getFlujoFi, t);
             return r
         },
+
         obtenerCentroDistribucion: async function () {
             const n = await this.oServiceModel.readAsync(e.services.getCentroDistribucion, {});
             return n

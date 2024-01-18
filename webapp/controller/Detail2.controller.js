@@ -346,8 +346,7 @@ function (e, t, o, i, a, l, n, s, r, c) {
             this.localModel.refresh();
             console.log(a);
             this.localModel.setProperty("/detalle", a.detalleCliente);
-            this.localModel.setProperty +
-            ("/direccionCollection", a.direccionesCliente.results);
+            this.localModel.setProperty("/direccionCollection", a.direccionesCliente.results);
             const s = a.adjuntosCliente.results;
             for (const e of s) {}
             this.localModel.setProperty("/Adjuntos", a.adjuntosCliente.results);
@@ -356,9 +355,9 @@ function (e, t, o, i, a, l, n, s, r, c) {
                 path: "/listadoDocumentos/ " + this._detail,
                 model: "localModel"
             });
-            var r = this.localModel.getProperty(" / detalle");
+            var r = this.localModel.getProperty("/detalle");
             var d = await c.obtenerFlujo(r.LibCodigo);
-            this.localModel.setProperty(" / flujoCollection", d);
+            this.localModel.setProperty("/flujoCollection", d);
             this.onChangePais()
         },
 
