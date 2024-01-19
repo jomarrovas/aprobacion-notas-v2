@@ -9,7 +9,7 @@
             controllerName="zalcsa.aprobacionnotasv2.controller.Detail">
     <App>
     <pages>
-      <Page title="{i18n>lblDetalleCobranza}">
+      <Page title="{i18n>appDescription}">
         <content>
           <MessagePage    id="idPage"
                   showHeader="false"
@@ -70,6 +70,13 @@
                 </VBox>
                 <VBox justifyContent="Center"
                     class="sapUiSmallMarginBeginEnd">
+                  <Label  text="{i18n>clCodMotivo}"
+                      labelFor="idText44"/>
+                  <Text id="idText44"
+                      text="{Head>/CodigoMotivo}"/>
+                </VBox>
+                <VBox justifyContent="Center"
+                    class="sapUiSmallMarginBeginEnd">
                   <Label  text="{i18n>clCreadoPor}"
                       labelFor="idText3"/>
                   <Text id="idText3"
@@ -85,7 +92,7 @@
                 <uxap:subSections>
                   <uxap:ObjectPageSubSection>
                     <uxap:blocks>
-                      <VBox justifyContent="Center">
+                      <!-- <VBox justifyContent="Center">
                         <Label  text="{i18n>clDocumento}"
                             labelFor="idText6"/>
                         <Text id="idText6"
@@ -96,44 +103,26 @@
                         <Text id="idText5"
                             text="{Head>/Sociedad}"/>
                         <html:br />
-                      </VBox>
-                    <VBox justifyContent="Center">
-                        <Label  text="{i18n>clDocumento}"
-                            labelFor="idText6"/>
-                        <Text id="idText66"
-                            text="{Head>/Documento}"/>
-                        <html:br />
-                        <Label  text="{i18n>clSociedad}"
+                      </VBox> -->
+                      <VBox justifyContent="Center">
+                        <Label  text="{i18n>clNombreCliente}"
                             labelFor="idText5"/>
-                        <Text id="idText55"
-                            text="{Head>/Sociedad}"/>
+                        <Text id="idText5"
+                            text="{Head>/Cliente}"/>
+                        <html:br />
+                        <Label  text="{i18n>clMotivo}"
+                            labelFor="idText6"/>
+                        <Text id="idText6"
+                            text="{Head>/Motivo}"/>
                         <html:br />
                       </VBox>
-                      <!--
-                      <VBox justifyContent="Center" >
-                        <Label  text="{i18n>clCpagoActual}"
+                      <VBox justifyContent="Center">
+                        <Label  text="{i18n>clEstado}"
                             labelFor="idText7"/>
                         <Text id="idText7"
-                            text="{Head>/CreadoPor}"/>
-                        <html:br />
-                        <Label  text="{i18n>clCpagoNuevo}"
-                            labelFor="idInput1"/>
-                        <Input  id="idInput1"
-                            required="true"
-                            showSuggestion="true"
-                            showValueHelp="true"
-                            valueHelpRequest=".onValueHelpRequest"
-                            suggestionItems="{/CondicionPagoSet}"
-                            change=".onChange"
-                            maxLength="4"
-                            value="{Head>/CpagoNuevo}">
-                          <suggestionItems>
-                            <core:Item  text="{zterm}" />
-                          </suggestionItems>
-                        </Input>
+                            text="{Head>/Estado}"/>
                         <html:br />
                       </VBox>
-                      -->
                     </uxap:blocks>
                   </uxap:ObjectPageSubSection>
                 </uxap:subSections>
@@ -158,6 +147,7 @@
                             </content>
                           </OverflowToolbar>
                         </headerToolbar>
+
                         <columns>
                           <Column>
                             <Text   text="{i18n>clDocumento}"/>
@@ -165,25 +155,29 @@
                           <Column>
                             <Text   text="{i18n>clSociedad}"/>
                           </Column>
-                          <Column minScreenWidth="Tablet"
+                          <!-- <Column minScreenWidth="Tablet"
                               demandPopin="true">
                             <Text   text="{i18n>clCodCliente}"/>
-                          </Column>
+                          </Column> -->
                           <Column minScreenWidth="Tablet"
                               demandPopin="true">
                             <Text   text="{i18n>clValorNeto}"/>
+                          </Column>  
+                           <Column>
+                            <Text   text="{i18n>clFacturaReferencia}"/>
                           </Column>
-                          <Column minScreenWidth="Tablet"
+                          <!-- <Column minScreenWidth="Tablet"
                               demandPopin="true">
                             <Text text="{i18n>CreadoPor}"/>
-                          </Column>
+                          </Column> -->
                         </columns>
+
                         <items>
                           <ColumnListItem type="Inactive">
                             <cells>
                               <Text text="{Documento}"/>
                               <Text text="{Sociedad}"/>
-                              <Text text="{CodigoCliente}"/>
+                              <!-- <Text text="{CodigoCliente}"/> -->
                               <Text   text="{path:'ValorNeto',
                                     type:'sap.ui.model.type.Float',
                                     formatOptions:{
@@ -191,35 +185,12 @@
                                       decimalSeparator : '.',
                                       decimals: 2
                               }}"/>
-                              <Text text="{CreadoPor}"/>
-                            <!--
-                              <Text text="{path:'Cantidad',
-                                    type:'sap.ui.model.type.Float',
-                                    formatOptions:{
-                                      groupingSeparator: ',',
-                                      decimalSeparator : '.',
-                                      decimals: 3
-                                    }}" />
-                              <Text text="{Descripcion}"/>
-                              <Text   text="{Um}"/>
-                              <Text   text="{path:'Precio',
-                                    type:'sap.ui.model.type.Float',
-                                    formatOptions:{
-                                      groupingSeparator: ',',
-                                      decimalSeparator : '.',
-                                      decimals: 2
-                                    }}"/>
-                              <Text   text="{path:'Total',
-                                    type:'sap.ui.model.type.Float',
-                                    formatOptions:{
-                                      groupingSeparator: ',',
-                                      decimalSeparator : '.',
-                                      decimals: 2
-                                    }}"/>
-                            -->
+                              <Text text="{FacturaReferencia}"/>
+                              <!-- <Text text="{CreadoPor}"/> -->
                             </cells>
                           </ColumnListItem>
                         </items>
+
                       </Table>
 
                     </uxap:blocks>

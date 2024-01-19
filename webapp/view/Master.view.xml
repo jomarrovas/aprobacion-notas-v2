@@ -81,8 +81,10 @@
                         iconDensityAware="false">
                   <attributes>
                     <ObjectAttribute  text="{i18n>clCodCliente}: {CodigoCliente}"/>
-                    <ObjectAttribute  text="{i18n>clCreadoPor}: {CreadoPor}"/>
+                    <ObjectAttribute  text="{i18n>clNombreCliente}: {Cliente}"/>
+                    <!-- <ObjectAttribute  text="{i18n>clCodMotivo}: {CodigoMotivo}"/> -->
                     <ObjectAttribute  text="{i18n>clMotivo}: {Motivo}"/>
+                    <!-- <ObjectAttribute  text="{i18n>clCreadoPor}: {CreadoPor}"/> -->
                   </attributes>
                 </ObjectListItem>
               </items>
