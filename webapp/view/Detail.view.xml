@@ -97,6 +97,18 @@
                             text="{Head>/Sociedad}"/>
                         <html:br />
                       </VBox>
+                    <VBox justifyContent="Center">
+                        <Label  text="{i18n>clDocumento}"
+                            labelFor="idText6"/>
+                        <Text id="idText66"
+                            text="{Head>/Documento}"/>
+                        <html:br />
+                        <Label  text="{i18n>clSociedad}"
+                            labelFor="idText5"/>
+                        <Text id="idText55"
+                            text="{Head>/Sociedad}"/>
+                        <html:br />
+                      </VBox>
                       <!--
                       <VBox justifyContent="Center" >
                         <Label  text="{i18n>clCpagoActual}"
