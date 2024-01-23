@@ -2,7 +2,7 @@ sap.ui.define([
     "sap/ui/core/UIComponent",
     "sap/ui/Device",
     "sap/f/library",
-    "zalcsa/aprobacionnotasv2/model/models",
+    "zalcsa/aprobacionnotas/model/models",
     "sap/ui/model/json/JSONModel", 
     "sap/f/FlexibleColumnLayoutSemanticHelper", 
     "sap/ui/model/odata/v2/ODataModel"
@@ -12,7 +12,7 @@ function (UIComponent, Device, library, models, o, i, a) {
     let UUIComponent;
     let goSelCobranza;
 
-    UUIComponent = UIComponent.extend("zalcsa.aprobacionnotasv2.Component", {
+    UUIComponent = UIComponent.extend("zalcsa.aprobacionnotas.Component", {
         metadata: {
             manifest: "json",
             config: {
@@ -69,14 +69,14 @@ function (UIComponent, Device, library, models, o, i, a) {
         },
 
         /**
-         *@memberOf zalcsa.aprobacionnotasv2.Component
+         *@memberOf zalcsa.aprobacionnotas.Component
          * @returns {object} getSelCobranza
          */
         getSelCobranza: function () {
             return goSelCobranza;
         },
         /**
-         *@memberOf zalcsa.aprobacionnotasv2.Component
+         *@memberOf zalcsa.aprobacionnotas.Component
          * @param {object} thisgoSelCobranza setSelCobranza
          */
         setSelCobranza: function (thisgoSelCobranza) {

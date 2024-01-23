@@ -1,5 +1,5 @@
 sap.ui.define([
-    "zalcsa/aprobacionnotasv2/Constantes"
+    "zalcsa/aprobacionnotas/Constantes"
 ], 
 function (e) {
     "use strict";

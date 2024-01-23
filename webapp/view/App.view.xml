@@ -3,7 +3,7 @@
             xmlns:core="sap.ui.core"
             xmlns:mvc="sap.ui.core.mvc"
             xmlns:html="http://www.w3.org/1999/xhtml"
-            controllerName="zalcsa.aprobacionnotasv2.controller.App">
+            controllerName="zalcsa.aprobacionnotas.controller.App">
     <App    id="app">
     </App>
 </mvc:View>

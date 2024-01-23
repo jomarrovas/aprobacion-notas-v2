@@ -6,7 +6,7 @@
             xmlns:layout="sap.ui.layout"
             xmlns:uxap="sap.uxap"
             xmlns:html="http://www.w3.org/1999/xhtml"
-            controllerName="zalcsa.aprobacionnotasv2.controller.Detail">
+            controllerName="zalcsa.aprobacionnotas.controller.Detail">
     <App>
     <pages>
       <Page title="{i18n>appDescription}">

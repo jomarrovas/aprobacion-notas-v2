@@ -3,14 +3,14 @@ sap.ui.define([
     "sap/ui/model/Filter", 
     "sap/ui/model/FilterOperator", 
     "sap/ui/core/Fragment", 
-    "zalcsa/aprobacionnotasv2/Constantes", 
+    "zalcsa/aprobacionnotas/Constantes", 
     "sap/ui/core/BusyIndicator", 
     "sap/m/MessageToast", 
     "sap/m/MessageBox"], 
     function (e, o, r, s, t, i, n, c) {
         
 "use strict";
-return e.extend("zalcsa.aprobacionnotasv2.controller.Base", {
+return e.extend("zalcsa.aprobacionnotas.controller.Base", {
     init: function () {
         this.oServiceModel = this.getOwnerComponent().getModel("mainModel");
         this.i18n = this.getOwnerComponent().getModel("i18n").getResourceBundle()

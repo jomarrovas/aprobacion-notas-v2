@@ -1,7 +1,7 @@
 {
   "_version": "1.49.0",
   "sap.app": {
-      "id": "zalcsa.aprobacionnotasv2",
+      "id": "zalcsa.aprobacionnotas",
       "type": "application",
       "i18n": "i18n/i18n.properties",
       "applicationVersion": {
@@ -72,7 +72,7 @@
           "i18n": {
               "type": "sap.ui.model.resource.ResourceModel",
               "settings": {
-                  "bundleName": "zalcsa.aprobacionnotasv2.i18n.i18n"
+                  "bundleName": "zalcsa.aprobacionnotas.i18n.i18n"
               }
           },
           "mainModel": {
@@ -116,7 +116,7 @@
               "routerClass": "sap.m.routing.Router",
               "viewType": "XML",
               "async": true,
-              "viewPath": "zalcsa.aprobacionnotasv2.view",
+              "viewPath": "zalcsa.aprobacionnotas.view",
               "controlAggregation": "pages",
               "controlId": "idFexibleColumnLayout",
               "clearControlAggregation": false
@@ -165,7 +165,7 @@
           }
       },
       "rootView": {
-          "viewName": "zalcsa.aprobacionnotasv2.view.Main",
+          "viewName": "zalcsa.aprobacionnotas.view.Main",
           "type": "XML",
           "async": true,
           "id": "Main"
@@ -173,6 +173,6 @@
   },
   "sap.cloud": {
       "public": true,
-      "service": "zalcsaaprobacionnotasv2"
+      "service": "zalcsaaprobacionnotas"
   }
 }

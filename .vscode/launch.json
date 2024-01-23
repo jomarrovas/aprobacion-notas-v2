@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "zalcsa.aprobacionnotasv2-config1",
+      "name": "zalcsa.aprobacionnotas-config1",
       "cwd": "${workspaceFolder}",
       "runtimeArgs": [
         "fiori",
@@ -22,7 +22,7 @@
       "internalConsoleOptions": "openOnSessionStart",
       "outputCapture": "std",
       "env": {
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/zalcsa.aprobacionnotasv2\"}",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/zalcsa.aprobacionnotas\"}",
         "FIORI_TOOLS_BACKEND_CONFIG": "[{\"path\":\"/sap\",\"url\":\"https://fiorides.alcsa.com.gt:44300\",\"client\":\"200\",\"destination\":\"alcsades\"}]",
         "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
       }
