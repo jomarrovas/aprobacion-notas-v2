@@ -50,36 +50,43 @@
                 <VBox justifyContent="Center"
                     class="sapUiSmallMarginBeginEnd">
                   <Label  text="{i18n>clDocumento}"
-                      labelFor="idText2"/>
-                  <Text id="idText2"
+                      labelFor="idText1"/>
+                  <Text id="idText1"
                       text="{Head>/Documento}"/>
                 </VBox>
                 <VBox justifyContent="Center"
                     class="sapUiSmallMarginBeginEnd">
                   <Label  text="{i18n>clSociedad}"
-                      labelFor="idText1"/>
-                  <Text id="idText1"
+                      labelFor="idText2"/>
+                  <Text id="idText2"
                       text="{Head>/Sociedad}"/>
                 </VBox>
                 <VBox justifyContent="Center"
                     class="sapUiSmallMarginBeginEnd">
                   <Label  text="{i18n>clCodCliente}"
-                      labelFor="idText4"/>
-                  <Text id="idText4"
+                      labelFor="idText3"/>
+                  <Text id="idText3"
                       text="{Head>/CodigoCliente}"/>
                 </VBox>
                 <VBox justifyContent="Center"
                     class="sapUiSmallMarginBeginEnd">
                   <Label  text="{i18n>clCodMotivo}"
-                      labelFor="idText44"/>
-                  <Text id="idText44"
+                      labelFor="idText4"/>
+                  <Text id="idText4"
                       text="{Head>/CodigoMotivo}"/>
                 </VBox>
                 <VBox justifyContent="Center"
                     class="sapUiSmallMarginBeginEnd">
+                  <Label  text="{i18n>clCodCanal}"
+                      labelFor="idText5"/>
+                  <Text id="idText5"
+                      text="{Head>/CodigoCanal}"/>
+                </VBox>
+                <VBox justifyContent="Center"
+                    class="sapUiSmallMarginBeginEnd">
                   <Label  text="{i18n>clCreadoPor}"
-                      labelFor="idText3"/>
-                  <Text id="idText3"
+                      labelFor="idText6"/>
+                  <Text id="idText6"
                       text="{Head>/CreadoPor}"/>
                 </VBox>
               </FlexBox>
@@ -92,34 +99,22 @@
                 <uxap:subSections>
                   <uxap:ObjectPageSubSection>
                     <uxap:blocks>
-                      <!-- <VBox justifyContent="Center">
-                        <Label  text="{i18n>clDocumento}"
-                            labelFor="idText6"/>
-                        <Text id="idText6"
-                            text="{Head>/Documento}"/>
-                        <html:br />
-                        <Label  text="{i18n>clSociedad}"
-                            labelFor="idText5"/>
-                        <Text id="idText5"
-                            text="{Head>/Sociedad}"/>
-                        <html:br />
-                      </VBox> -->
                       <VBox justifyContent="Center">
                         <Label  text="{i18n>clNombreCliente}"
-                            labelFor="idText5"/>
-                        <Text id="idText5"
+                            labelFor="idText7"/>
+                        <Text id="idText7"
                             text="{Head>/Cliente}"/>
                         <html:br />
                         <Label  text="{i18n>clMotivo}"
-                            labelFor="idText6"/>
-                        <Text id="idText6"
+                            labelFor="idText8"/>
+                        <Text id="idText8"
                             text="{Head>/Motivo}"/>
                         <html:br />
                       </VBox>
                       <VBox justifyContent="Center">
                         <Label  text="{i18n>clEstado}"
-                            labelFor="idText7"/>
-                        <Text id="idText7"
+                            labelFor="idText9"/>
+                        <Text id="idText9"
                             text="{Head>/Estado}"/>
                         <html:br />
                       </VBox>
@@ -155,10 +150,6 @@
                           <Column>
                             <Text   text="{i18n>clSociedad}"/>
                           </Column>
-                          <!-- <Column minScreenWidth="Tablet"
-                              demandPopin="true">
-                            <Text   text="{i18n>clCodCliente}"/>
-                          </Column> -->
                           <Column minScreenWidth="Tablet"
                               demandPopin="true">
                             <Text   text="{i18n>clValorNeto}"/>
@@ -166,10 +157,6 @@
                            <Column>
                             <Text   text="{i18n>clFacturaReferencia}"/>
                           </Column>
-                          <!-- <Column minScreenWidth="Tablet"
-                              demandPopin="true">
-                            <Text text="{i18n>CreadoPor}"/>
-                          </Column> -->
                         </columns>
 
                         <items>
@@ -177,7 +164,6 @@
                             <cells>
                               <Text text="{Documento}"/>
                               <Text text="{Sociedad}"/>
-                              <!-- <Text text="{CodigoCliente}"/> -->
                               <Text   text="{path:'ValorNeto',
                                     type:'sap.ui.model.type.Float',
                                     formatOptions:{
@@ -186,7 +172,6 @@
                                       decimals: 2
                               }}"/>
                               <Text text="{FacturaReferencia}"/>
-                              <!-- <Text text="{CreadoPor}"/> -->
                             </cells>
                           </ColumnListItem>
                         </items>
@@ -247,52 +232,6 @@
                   </uxap:ObjectPageSubSection>
                 </uxap:subSections>
               </uxap:ObjectPageSection>
-
-  <!--
-              <uxap:ObjectPageSection title="{i18n>flujoAprobacion}" >
-                <uxap:subSections>
-                  <uxap:ObjectPageSubSection>
-
-                    <uxap:blocks>
-                      <Table id="Tableesquema_3"
-                          mode="None"
-                          inset="false"
-                          growingThreshold="10"
-                          width="auto"
-                          items="{/ZCDS_ESQUEMA_USR}"
-                      >
-                        <columns>
-                          <Column demandPopin="true">
-                            <Text text="{i18n>libCodigo}" />
-                          </Column>
-                          <Column demandPopin="true">
-                              <Text text="{i18n>paso}"/>
-                            </Column>
-
-                          <Column demandPopin="true">
-                            <Text text="{i18n>usuario}" />
-                          </Column>
-                        </columns>
-
-                        <items>
-                          <ColumnListItem type="Inactive">
-                            <cells>
-                              <Text text="{lib_codigo}" />
-                              <HBox >
-                                <core:Icon src="sap-icon://arrow-right" class="sapUiSmallMarginEnd" ></core:Icon>
-                                <Text text="{paso}" />
-                              </HBox>
-                              <Text text="{usuario}" />
-                            </cells>
-                          </ColumnListItem>
-                        </items>
-
-                      </Table>
-                    </uxap:blocks>
-                  </uxap:ObjectPageSubSection>
-                </uxap:subSections>
-              </uxap:ObjectPageSection>
--->
 
             </uxap:sections>
 
