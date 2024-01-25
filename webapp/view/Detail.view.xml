@@ -164,13 +164,15 @@
                             <cells>
                               <Text text="{Documento}"/>
                               <Text text="{Sociedad}"/>
-                              <Text   text="{path:'ValorNeto',
-                                    type:'sap.ui.model.type.Float',
-                                    formatOptions:{
-                                      groupingSeparator: ',',
-                                      decimalSeparator : '.',
-                                      decimals: 2
-                              }}"/>
+                              <Text text="{
+                                      path:'ValorNeto',
+                                      type:'sap.ui.model.type.Float',
+                                      formatOptions:{
+                                        groupingSeparator: ',',
+                                        decimalSeparator : '.',
+                                        decimals: 2
+                                      }
+                                    }"/>
                               <Text text="{FacturaReferencia}"/>
                             </cells>
                           </ColumnListItem>
@@ -183,7 +185,7 @@
                 </uxap:subSections>
               </uxap:ObjectPageSection>
 
-
+              <!-- Flujo de Aprobacion -->
               <uxap:ObjectPageSection titleUppercase="false"
                           title="{i18n>flujoAprobacion}">
                 <uxap:subSections>
@@ -201,8 +203,7 @@
                             }
                           }"
                           class="sapFDynamicPageAlignContent"
-                          width="auto"
-                      >
+                          width="auto">
                         <columns>
                           <Column demandPopin="true">
                             <Text   text="{i18n>libCodigo}"/>
@@ -223,6 +224,56 @@
                                 <Label text="{localModel>paso}" />
                               </HBox>
                               <ObjectIdentifier text="{localModel>usuario}"/>
+                            </cells>
+                          </ColumnListItem>
+                        </items>
+                      </Table>
+
+                    </uxap:blocks>
+                  </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+              </uxap:ObjectPageSection>
+
+              <!-- Log Aprobación de Documento -->
+              <uxap:ObjectPageSection titleUppercase="false"
+                          title="{i18n>logAprobacionDocto}">
+                <uxap:subSections>
+                  <uxap:ObjectPageSubSection>
+                    <uxap:blocks>
+
+                      <Table  id="Tablelog"
+                          sticky="ColumnHeaders,HeaderToolbar"
+                          inset="false"
+                          growing="true"
+                          items="{
+                            path: 'localModel>/logCollection',
+                            sorter: {
+                              path: 'paso'
+                            }
+                          }"
+                          class="sapFDynamicPageAlignContent"
+                          width="auto">
+                        <columns>
+                          <Column demandPopin="true">
+                            <Text   text="{i18n>clDocumento}"/>
+                          </Column>
+                          <Column demandPopin="true">
+                            <Text   text="{i18n>usuario}"/>
+                          </Column>
+                          <Column demandPopin="true">
+                            <Text   text="{i18n>paso}"/>
+                          </Column>
+                          <Column demandPopin="true">
+                            <Text   text="{i18n>proceso}"/>
+                          </Column>
+                        </columns>
+                        <items>
+                          <ColumnListItem vAlign="Middle">
+                            <cells>
+                              <ObjectIdentifier text="{localModel>documento}"/>
+                              <ObjectIdentifier text="{localModel>usuario}"/>
+                              <ObjectIdentifier text="{localModel>paso}"/>
+                              <ObjectIdentifier text="{localModel>proceso}"/>
                             </cells>
                           </ColumnListItem>
                         </items>

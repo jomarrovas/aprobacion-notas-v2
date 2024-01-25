@@ -26,7 +26,8 @@ sap.ui.define([], function () {
             getFlujo: "/ZCDS_ESQUEMA_USR",
 
             getPasoFi: "/ZFI_CDS_SOL_PASO",
-            getFlujoFi: "/ZFI_CDS_ESQUEMA_USR"
+            getFlujoFi: "/ZFI_CDS_ESQUEMA_USR",
+            getLogNc: "/ZFI_CDS_LOG_NC_AUDITORIA"
         }
     }
 });

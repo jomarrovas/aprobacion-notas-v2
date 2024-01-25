@@ -106,6 +106,16 @@ function (e) {
             return r
         },
 
+        obtenerLog: async function (n) {
+            const t = {
+                urlParameters: {
+                    $filter: "documento eq '" + n + "'"
+                }
+            };
+            const r = await this.oServiceModel.readAsync(e.services.getLogNc, t);
+            return r
+        },
+
         obtenerCentroDistribucion: async function () {
             const n = await this.oServiceModel.readAsync(e.services.getCentroDistribucion, {});
             return n
