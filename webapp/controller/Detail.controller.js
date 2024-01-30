@@ -1,5 +1,6 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
+    "sap/ui/core/Core",
     "sap/ui/model/json/JSONModel",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
@@ -7,18 +8,24 @@ sap.ui.define([
     "sap/ui/core/BusyIndicator",
     "sap/f/library",
     "sap/ui/core/ValueState",
-    "zalcsa/aprobacionnotas/service/Solicitud"
+    "zalcsa/aprobacionnotas/service/Solicitud",
+    "sap/m/library",
+    "sap/m/MessageToast"
 ],
 /**
  * @param {typeof sap.ui.core.mvc.Controller} Controller
  */
-function (Controller, JSONModel, Filter, FilterOperator, MessageBox, BusyIndicator, library, ValueState, servSol) {
+function (Controller, Core, JSONModel, Filter, FilterOperator, MessageBox, BusyIndicator, library, ValueState, servSol,
+    mobileLibrary, MessageToast) {
 "use strict";
 let CController;
 let goThat;
 let gbCompact;
 let goMessagePopover = new sap.m.MessagePopover();
 let goSetInterval;
+
+// shortcut for sap.m.DialogType
+var DialogType = mobileLibrary.DialogType;
 
 CController = Controller.extend("zalcsa.aprobacionnotas.controller.Detail", {
     /**
@@ -122,7 +129,7 @@ CController = Controller.extend("zalcsa.aprobacionnotas.controller.Detail", {
         this.localModel.setProperty("/detalle/Paso", solicitudPaso[0].paso);
 
         //Flujo de Aprobacion
-        var esquemaLiberacion = await servSol.obtenerFlujo(solicitudPaso[0].lib_codigo);
+        var esquemaLiberacion = await servSol.obtenerFlujo(solicitudPaso[0].documento);
         this.localModel.setProperty("/flujoCollection", esquemaLiberacion);
 
         //Log Aprobacion de Documento Seleccionado
@@ -236,10 +243,12 @@ CController = Controller.extend("zalcsa.aprobacionnotas.controller.Detail", {
      *@memberOf zalcsa.aprobacionnotas.view.Detail
      * @param {object} oEvent onAccept
      */
+    /*
     onAccept: function (oEvent) {
         var oThat = this;
         MessageBox["confirm"](this.i18n.getText("confirmMessage"), {
-            actions: [MessageBox.Action.YES,
+            actions: [
+                MessageBox.Action.YES,
                 MessageBox.Action.NO
             ],
             onClose: function (oAction) {
@@ -267,15 +276,18 @@ CController = Controller.extend("zalcsa.aprobacionnotas.controller.Detail", {
             .bind(this)
         });
     },
+    */
 
     /**
      *@memberOf zalcsa.aprobacionnotas.view.Detail
      * @param {object} oEvent onReject
      */
-     onReject: function (oEvent) {
+    /*
+    onReject: function (oEvent) {
         var oThat = this;
         MessageBox["confirm"](this.i18n.getText("confirmMessage"), {
-            actions: [MessageBox.Action.YES,
+            actions: [
+                MessageBox.Action.YES,
                 MessageBox.Action.NO
             ],
             onClose: function (oAction) {
@@ -302,6 +314,130 @@ CController = Controller.extend("zalcsa.aprobacionnotas.controller.Detail", {
             }
             .bind(this)
         });
+    },
+    */
+
+    onAccept: function () {
+        if (!this.oSubmitDialog) {
+            this.oSubmitDialog = new sap.m.Dialog({
+                type: DialogType.Message,
+                title: "Aprobar",
+                content: [
+                    new sap.m.Label({
+                        text: this.i18n.getText("confirmMessage"),
+                        labelFor: "submissionNote"
+                    }),
+                    new sap.m.TextArea("submissionNote", {
+                        width: "100%",
+                        placeholder: "Comentario (Opcional)"
+                    })
+                ],
+                beginButton: new sap.m.Button({
+                    //type: ButtonType.Emphasized,
+                    text: "Si",
+                    press: function () {
+                        var sText = Core.byId("submissionNote").getValue();
+
+                        //----------
+                        let oSelCobranza = this.getOwnerComponent().getSelCobranza();
+                        let oTable = this.getView().byId("idTable2");
+                        let oDetCobranza = oTable.getItems()[0].getBindingContext().getObject();
+                        let mAprove = {
+                            Documento: oSelCobranza.Documento,
+                            Sociedad: oSelCobranza.Sociedad,
+                            ValorNeto: oSelCobranza.ValorNeto,
+                            FacturaReferencia: oSelCobranza.FacturaReferencia,
+                            CodigoCliente: oSelCobranza.CodigoCliente,
+                            CreadoPor: oSelCobranza.CreadoPor,
+                            Estado: oSelCobranza.Estado,
+                            Motivo: oSelCobranza.Motivo,
+                            Moneda: oSelCobranza.Moneda,
+                            UsuarioModifica: oSelCobranza.UsuarioModifica,
+                            Comentario: sText,
+                            Aprobar: true
+                        };
+                        this._onAproveReject(mAprove);
+                        //----------
+
+                        //MessageToast.show("Note is: " + sText);
+                        Core.byId("submissionNote").setValue("");
+                        this.oSubmitDialog.close();
+                    }.bind(this)
+                }),
+                endButton: new sap.m.Button({
+                    text: "No",
+                    press: function () {
+                        Core.byId("submissionNote").setValue("");
+                        this.oSubmitDialog.close();
+                    }.bind(this)
+                })
+            });
+        }
+        this.oSubmitDialog.open();
+    },
+
+    onReject: function () {
+        if (!this.oRejectDialog) {
+            this.oRejectDialog = new sap.m.Dialog({
+                type: DialogType.Message,
+                title: "Rechazar",
+                content: [
+                    new sap.m.Label({
+                        text: this.i18n.getText("confirmMessage"),
+                        labelFor: "rejectionNote"
+                    }),
+                    new sap.m.TextArea("rejectionNote", {
+                        width: "100%",
+                        placeholder: "Comentario (Obligatorio)",
+                        liveChange: function (oEvent) {
+                            var sText = oEvent.getParameter("value");
+                            this.oRejectDialog.getBeginButton().setEnabled(sText.length > 0);
+                        }.bind(this)
+                    })
+                ],
+                beginButton: new sap.m.Button({
+                    //type: ButtonType.Emphasized,
+                    text: "Si",
+                    enabled: false,
+                    press: function () {
+                        var sText = Core.byId("rejectionNote").getValue();
+
+                        //----------
+                        let oSelCobranza = this.getOwnerComponent().getSelCobranza();
+                        let oTable = this.getView().byId("idTable2");
+                        let oDetCobranza = oTable.getItems()[0].getBindingContext().getObject();
+                        let mAprove = {
+                            Documento: oSelCobranza.Documento,
+                            Sociedad: oSelCobranza.Sociedad,
+                            ValorNeto: oSelCobranza.ValorNeto,
+                            FacturaReferencia: oSelCobranza.FacturaReferencia,
+                            CodigoCliente: oSelCobranza.CodigoCliente,
+                            CreadoPor: oSelCobranza.CreadoPor,
+                            Estado: oSelCobranza.Estado,
+                            Motivo: oSelCobranza.Motivo,
+                            Moneda: oSelCobranza.Moneda,
+                            UsuarioModifica: oSelCobranza.UsuarioModifica,
+                            Comentario: sText,
+                            Aprobar: false
+                        };
+                        this._onAproveReject(mAprove);
+                        //----------
+
+                        //MessageToast.show("Note is: " + sText);
+                        Core.byId("rejectionNote").setValue("");
+                        this.oRejectDialog.close();
+                    }.bind(this)
+                }),
+                endButton: new sap.m.Button({
+                    text: "No",
+                    press: function () {
+                        Core.byId("rejectionNote").setValue("");
+                        this.oRejectDialog.close();
+                    }.bind(this)
+                })
+            });
+        }
+        this.oRejectDialog.open();
     },
 
     /**

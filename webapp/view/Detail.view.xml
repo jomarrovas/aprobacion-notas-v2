@@ -255,9 +255,6 @@
                           width="auto">
                         <columns>
                           <Column demandPopin="true">
-                            <Text   text="{i18n>clDocumento}"/>
-                          </Column>
-                          <Column demandPopin="true">
                             <Text   text="{i18n>usuario}"/>
                           </Column>
                           <Column demandPopin="true">
@@ -266,14 +263,28 @@
                           <Column demandPopin="true">
                             <Text   text="{i18n>proceso}"/>
                           </Column>
+                          <Column demandPopin="true">
+                            <Text   text="{i18n>fecha}"/>
+                          </Column>
+                          <Column demandPopin="true">
+                            <Text   text="{i18n>comentario}"/>
+                          </Column>   
                         </columns>
                         <items>
                           <ColumnListItem vAlign="Middle">
                             <cells>
-                              <ObjectIdentifier text="{localModel>documento}"/>
                               <ObjectIdentifier text="{localModel>usuario}"/>
                               <ObjectIdentifier text="{localModel>paso}"/>
                               <ObjectIdentifier text="{localModel>proceso}"/>
+                              <ObjectIdentifier text="{
+                                                  path:'localModel>fechadocto',
+                                                  type:'sap.ui.model.type.Date',
+                                                  formatOptions:{
+                                                    pattern: 'dd.MM.yyyy',
+                                                    UTC: true
+                                                  }
+                                                }"/>
+                              <ObjectIdentifier text="{localModel>comentario}"/>
                             </cells>
                           </ColumnListItem>
                         </items>

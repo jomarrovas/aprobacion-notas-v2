@@ -99,7 +99,7 @@ function (e) {
         obtenerFlujo: async function (n) {
             const t = {
                 urlParameters: {
-                    $filter: "lib_codigo eq '" + n + "'"
+                    $filter: "documento eq '" + n + "'"
                 }
             };
             const r = await this.oServiceModel.readAsync(e.services.getFlujoFi, t);
