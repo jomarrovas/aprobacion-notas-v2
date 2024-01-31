@@ -18,7 +18,7 @@
                     text="{i18n>lblSeleccionCobranza} (0)"/>
               </OverflowToolbar>-->
               <VBox>
-                <Label  text="{i18n>phSociedad}"
+                <!--<Label  text="{i18n>phSociedad}"
                     labelFor="input-a"/>
                 <Input  id="input-a"
                     value="{localModel>/oFilters/Sociedad}"
@@ -32,7 +32,7 @@
                   <suggestionItems>
                     <core:Item  text="{CompanyCode}"/>
                   </suggestionItems>
-                </Input>
+                </Input>-->
                 <Label  text="{i18n>phCodigoCliente}"
                     labelFor="input-b"/>
                 <Input  id="input-b"
