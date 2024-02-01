@@ -20,6 +20,6 @@ builder:
           name: ZFI_APROBSOLNC
           description: Aprobacion Solicitud NC
           package: zfi
-          transport: FIDK900816
+          transport: FIDK900826
         exclude:
           - /test/

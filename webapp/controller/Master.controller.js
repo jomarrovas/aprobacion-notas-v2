@@ -231,10 +231,9 @@ CController = Controller.extend("zalcsa.aprobacionnotas.controller.Master", {
         let oFilters = this.localModel.getProperty("/oFilters");
         let aFilters = [];
         //if (!oFilters.Sociedad || !oFilters.CodCliente) {
-          if (!oFilters.CodCliente) {
-            MessageBox.warning(this.i18n.getText("merrObligatorio"));
-            return;
-        }
+        //    MessageBox.warning(this.i18n.getText("merrObligatorio"));
+        //    return;
+        //}
         giSearch++;
         if (giSearch > 1) {
             return;
@@ -242,6 +241,7 @@ CController = Controller.extend("zalcsa.aprobacionnotas.controller.Master", {
         oFilters.Sociedad ? aFilters.push(new Filter("Sociedad", FilterOperator.EQ, oFilters.Sociedad)) : null;
         oFilters.CodCliente ? aFilters.push(new Filter("CodigoCliente", FilterOperator.EQ, oFilters.CodCliente)) : null;
         oFilters.filTabla ? aFilters.push(new Filter("Documento", FilterOperator.Contains, oFilters.filTabla)) : null;
+        oFilters.CreadoPor ? aFilters.push(new Filter("CreadoPor", FilterOperator.Contains, oFilters.CreadoPor)) : null;
 
         let oTable = this.getView().byId("idTable1");
         let oItems = oTable.getBinding("items");

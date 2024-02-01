@@ -37,7 +37,7 @@
                     labelFor="input-b"/>
                 <Input  id="input-b"
                     value="{localModel>/oFilters/CodCliente}"
-                    required="true"
+                    required="false"
                     showSuggestion="true"
                     showValueHelp="true"
                     valueHelpOnly="true"
@@ -48,6 +48,7 @@
                     <core:Item  text="{Customer}"/>
                   </suggestionItems>
                 </Input>
+
                 <Label  text="{i18n>btBusqueda}"
                     labelFor="searchField1"/>
                 <SearchField  id="searchField1"
@@ -56,6 +57,16 @@
                         value="{localModel>/oFilters/filTabla}"
                         placeholder="{i18n>homeSearchPlaceholder}"
                         width="100%"/>
+
+                <Label  text="{i18n>clCreadoPor}"
+                    labelFor="searchField2"/>
+                <SearchField  id="searchField2"
+                        change="onSearchButton"
+                        search="onSearchButton"
+                        value="{localModel>/oFilters/CreadoPor}"
+                        placeholder="{i18n>textoBusquedaCreadoPor}"
+                        width="100%"/>
+
                 <Button width="100%" press="onSearchButton"
                     text="{i18n>btBuscar}"/>
               </VBox>
@@ -84,7 +95,7 @@
                     <ObjectAttribute  text="{i18n>clNombreCliente}: {Cliente}"/>
                     <!-- <ObjectAttribute  text="{i18n>clCodMotivo}: {CodigoMotivo}"/> -->
                     <ObjectAttribute  text="{i18n>clMotivo}: {Motivo}"/>
-                    <!-- <ObjectAttribute  text="{i18n>clCreadoPor}: {CreadoPor}"/> -->
+                    <ObjectAttribute  text="{i18n>clCreadoPor}: {CreadoPor}"/>
                   </attributes>
                 </ObjectListItem>
               </items>
