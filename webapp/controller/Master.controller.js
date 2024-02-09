@@ -215,10 +215,12 @@ CController = Controller.extend("zalcsa.aprobacionnotas.controller.Master", {
             clearInterval(oSetInterval);
             let iResults = oEvent1.getSource().getLength();
             if (iResults <= 0) {
-                oTable.setHeaderText(goThat.i18n.getText("lblSeleccionCobranza") + "(0)");
+                //oTable.setHeaderText(goThat.i18n.getText("lblSeleccionCobranza") + "(0)"); // Se comenta Contador de Solicitudes
+                oTable.setHeaderText(goThat.i18n.getText("lblSeleccionCobranza"));
                 //MessageBox.warning(goThat.i18n.getText("merrSinRegistros"));
             } else {
-                oTable.setHeaderText(goThat.i18n.getText("lblSeleccionCobranza") + " (" + iResults + ")");
+                //oTable.setHeaderText(goThat.i18n.getText("lblSeleccionCobranza") + " (" + iResults + ")"); // Se comenta Contador de Solicitudes
+                oTable.setHeaderText(goThat.i18n.getText("lblSeleccionCobranza"));
                 goThat._ofrgInitial.close();
             }
         };
@@ -268,13 +270,15 @@ CController = Controller.extend("zalcsa.aprobacionnotas.controller.Master", {
             let iResults = oEvent1.getSource().getLength();
             if (iResults <= 0) {
                 iSearch++;
-                oTable.setHeaderText(goThat.i18n.getText("lblSeleccionCobranza") + "(0)");
+                //oTable.setHeaderText(goThat.i18n.getText("lblSeleccionCobranza") + "(0)"); // Se comenta Contador de Solicitudes
+                oTable.setHeaderText(goThat.i18n.getText("lblSeleccionCobranza"));
                 if (iSearch > 1) {
                     return;
                 }
                 //MessageBox.warning(goThat.i18n.getText("merrSinRegistros"));
             } else {
-                oTable.setHeaderText(goThat.i18n.getText("lblSeleccionCobranza") + " (" + iResults + ")");
+                //oTable.setHeaderText(goThat.i18n.getText("lblSeleccionCobranza") + " (" + iResults + ")"); // Se comenta Contador de Solicitudes
+                oTable.setHeaderText(goThat.i18n.getText("lblSeleccionCobranza"));
                 // goThat._ofrgInitial.close();
             }
         };

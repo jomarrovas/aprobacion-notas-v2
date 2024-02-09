@@ -89,6 +89,13 @@
                   <Text id="idText6"
                       text="{Head>/CreadoPor}"/>
                 </VBox>
+                <VBox justifyContent="Center"
+                    class="sapUiSmallMarginBeginEnd">
+                  <Label  text="{i18n>moneda}"
+                      labelFor="idText66"/>
+                  <Text id="idText66"
+                      text="{Head>/Moneda}"/>
+                </VBox>
               </FlexBox>
             </uxap:headerContent>
 

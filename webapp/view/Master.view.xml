@@ -78,6 +78,16 @@
           <VBox>
             <List   id="idTable1"
                 busyIndicatorDelay="0"
+                headerText="{i18n>lblSeleccionCobranza}"
+                noDataText="{i18n>tableNoData}"
+                growing="true"
+                growingThreshold="10"
+                inset="false"
+                width="auto"
+                items="{/selnotaSet}" >
+            <!-- // Se comenta Contador de Solicitudes
+              <List   id="idTable1"
+                busyIndicatorDelay="0"
                 headerText="{i18n>lblSeleccionCobranza} (0)"
                 noDataText="{i18n>tableNoData}"
                 growing="true"
@@ -85,13 +95,14 @@
                 inset="false"
                 width="auto"
                 items="{/selnotaSet}" >
+            -->
               <items>
                 <ObjectListItem type="Navigation"
                         title="{Documento}"
                         press=".onListItemPress"
                         iconDensityAware="false">
                   <attributes>
-                    <ObjectAttribute  text="{i18n>clCodCliente}: {CodigoCliente}"/>
+                    <!-- <ObjectAttribute  text="{i18n>clCodCliente}: {CodigoCliente}"/> -->
                     <ObjectAttribute  text="{i18n>clNombreCliente}: {Cliente}"/>
                     <!-- <ObjectAttribute  text="{i18n>clCodMotivo}: {CodigoMotivo}"/> -->
                     <ObjectAttribute  text="{i18n>clMotivo}: {Motivo}"/>
